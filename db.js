@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
-
-mongoose.connect(
-  "mongodb+srv://mhadgutpratik15:pratik241101@cluster0.gw0b5po.mongodb.net/hotels"
-);
+require("dotenv").config();
+mongoose.connect(process.env.MONGOURL);
 const db = mongoose.connection;
 db.on("connected", () => {
   console.log("mongodbdatabase connectes successfully");
